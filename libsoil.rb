@@ -18,7 +18,7 @@ end
 
 __END__
 diff --git a/Makefile b/Makefile
-index 6844aa6..49b52e0 100755
+index 6844aa6..403a918 100755
 --- a/Makefile
 +++ b/Makefile
 @@ -1,7 +1,7 @@
@@ -39,7 +39,7 @@ index 6844aa6..49b52e0 100755
 -LIBDIR = opt/local/lib
 +INCLUDEDIR = include/SOIL
 +LIBDIR = lib
-+DESTDIR = /$HOMEBREW_PREFIX
++DESTDIR = /$(HOMEBREW_PREFIX)
 
  all: $(OFILES) lib
 
