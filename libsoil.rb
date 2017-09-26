@@ -1,6 +1,7 @@
 require 'formula'
 
 class Libsoil < Formula
+  version '1.0'
   homepage 'http://www.lonesock.net/soil.html'
   url "https://github.com/childhood/libSOIL.git"
   head "https://https://github.com/childhood/libSOIL"
