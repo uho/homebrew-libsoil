@@ -6,8 +6,39 @@ class Libsoil < Formula
   url "https://github.com/childhood/libSOIL.git"
   head "https://https://github.com/childhood/libSOIL"
 
+  def patches
+    DATA
+  end
+
   def install
     system "make"
     system "make install"
   end
 end
+
+__END__
+diff --git a/Makefile b/Makefile
+index 6844aa6..67661a1 100755
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ MAKE = make
+ CC = gcc
+-INSTALL_FILE = install -p -o root -g admin -m 644
+-INSTALL_DIR = install -o root -g admin -d
++INSTALL_FILE = install -p -m 644
++INSTALL_DIR = install -d
+ LN = ln -s
+ RM = rm -fv
+ CFLAGS += -c -O2 -Wall
+@@ -17,8 +17,8 @@ HFILES = SOIL.h image_DXT.h image_helper.h \
+   stbi_DDS_aug.h stbi_DDS_aug_c.h stb_image_aug.h
+ AFILE = libSOIL.a
+ DYLIBFILE = libSOIL.dylib
+-INCLUDEDIR = opt/local/include/SOIL
+-LIBDIR = opt/local/lib
++INCLUDEDIR = include/SOIL
++LIBDIR = lib
+
+ all: $(OFILES) lib
+
