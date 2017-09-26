@@ -11,14 +11,14 @@ class Libsoil < Formula
   end
 
   def install
-    system "make"
-    system "make install"
+    system "make", "brewable"
+    prefix.install Dir["build/*"]
   end
 end
 
 __END__
 diff --git a/Makefile b/Makefile
-index 6844aa6..403a918 100755
+index 6844aa6..03aa40f 100755
 --- a/Makefile
 +++ b/Makefile
 @@ -1,7 +1,7 @@
@@ -39,7 +39,21 @@ index 6844aa6..403a918 100755
 -LIBDIR = opt/local/lib
 +INCLUDEDIR = include/SOIL
 +LIBDIR = lib
-+DESTDIR = /$(prefix)
++DESTDIR = /$(HOMEBREW_PREFIX)
 
  all: $(OFILES) lib
 
+@@ -32,6 +33,13 @@ lib: $(OFILES)
+        gcc -dynamiclib -o $(DYLIBFILE) $(OFILES) $(LDFLAGS)\
+                -install_name $(DESTDIR)/$(LIBDIR)/$(DYLIBFILE)
+
++brewable: all
++       mkdir -p build/include
++       mkdir build/lib
++       cp $(HFILES) build/include/
++       cp $(AFILE) build/lib/
++       cp $(DYLIBFILE) build/lib/
++
+ install:
+        $(INSTALL_DIR) $(DESTDIR)/$(INCLUDEDIR)
+        $(INSTALL_FILE) $(HFILES) $(DESTDIR)/$(INCLUDEDIR)
