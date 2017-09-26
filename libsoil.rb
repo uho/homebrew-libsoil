@@ -18,7 +18,7 @@ end
 
 __END__
 diff --git a/Makefile b/Makefile
-index 6844aa6..67661a1 100755
+index 6844aa6..49b52e0 100755
 --- a/Makefile
 +++ b/Makefile
 @@ -1,7 +1,7 @@
@@ -31,7 +31,7 @@ index 6844aa6..67661a1 100755
  LN = ln -s
  RM = rm -fv
  CFLAGS += -c -O2 -Wall
-@@ -17,8 +17,8 @@ HFILES = SOIL.h image_DXT.h image_helper.h \
+@@ -17,8 +17,9 @@ HFILES = SOIL.h image_DXT.h image_helper.h \
    stbi_DDS_aug.h stbi_DDS_aug_c.h stb_image_aug.h
  AFILE = libSOIL.a
  DYLIBFILE = libSOIL.dylib
@@ -39,6 +39,7 @@ index 6844aa6..67661a1 100755
 -LIBDIR = opt/local/lib
 +INCLUDEDIR = include/SOIL
 +LIBDIR = lib
++DESTDIR = /$HOMEBREW_PREFIX
 
  all: $(OFILES) lib
 
