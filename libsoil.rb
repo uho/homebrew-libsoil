@@ -39,7 +39,7 @@ index 6844aa6..403a918 100755
 -LIBDIR = opt/local/lib
 +INCLUDEDIR = include/SOIL
 +LIBDIR = lib
-+DESTDIR = /$(HOMEBREW_PREFIX)
++DESTDIR = /$(prefix)
 
  all: $(OFILES) lib
 
