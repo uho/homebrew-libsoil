@@ -18,7 +18,7 @@ end
 
 __END__
 diff --git a/Makefile b/Makefile
-index 6844aa6..03aa40f 100755
+index 6844aa6..ad0b76c 100755
 --- a/Makefile
 +++ b/Makefile
 @@ -1,7 +1,7 @@
@@ -48,9 +48,9 @@ index 6844aa6..03aa40f 100755
  	 	-install_name $(DESTDIR)/$(LIBDIR)/$(DYLIBFILE)
  
 +brewable: all
-+	mkdir -p build/include
++	mkdir -p build/include/SOIL
 +	mkdir build/lib
-+	cp $(HFILES) build/include/
++	cp $(HFILES) build/include/SOIL/
 +	cp $(AFILE) build/lib/
 +	cp $(DYLIBFILE) build/lib/
 +
