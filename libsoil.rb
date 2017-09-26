@@ -40,20 +40,21 @@ index 6844aa6..03aa40f 100755
 +INCLUDEDIR = include/SOIL
 +LIBDIR = lib
 +DESTDIR = /$(HOMEBREW_PREFIX)
-
+ 
  all: $(OFILES) lib
-
+ 
 @@ -32,6 +33,13 @@ lib: $(OFILES)
-        gcc -dynamiclib -o $(DYLIBFILE) $(OFILES) $(LDFLAGS)\
-                -install_name $(DESTDIR)/$(LIBDIR)/$(DYLIBFILE)
-
+ 	gcc -dynamiclib -o $(DYLIBFILE) $(OFILES) $(LDFLAGS)\
+ 	 	-install_name $(DESTDIR)/$(LIBDIR)/$(DYLIBFILE)
+ 
 +brewable: all
-+       mkdir -p build/include
-+       mkdir build/lib
-+       cp $(HFILES) build/include/
-+       cp $(AFILE) build/lib/
-+       cp $(DYLIBFILE) build/lib/
++	mkdir -p build/include
++	mkdir build/lib
++	cp $(HFILES) build/include/
++	cp $(AFILE) build/lib/
++	cp $(DYLIBFILE) build/lib/
 +
  install:
-        $(INSTALL_DIR) $(DESTDIR)/$(INCLUDEDIR)
-        $(INSTALL_FILE) $(HFILES) $(DESTDIR)/$(INCLUDEDIR)
+ 	$(INSTALL_DIR) $(DESTDIR)/$(INCLUDEDIR)
+ 	$(INSTALL_FILE) $(HFILES) $(DESTDIR)/$(INCLUDEDIR)
+
