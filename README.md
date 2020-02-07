@@ -9,6 +9,6 @@ A libSOIL formula for homebrew using [childhood/libSOIL](https://github.com/chil
 ## Installation
 
 ```
-brew tap zmarcantel/libsoil
+brew tap uho/libsoil
 brew install libsoil
 ```
