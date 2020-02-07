@@ -7,7 +7,7 @@ class Libsoil < Formula
   head "https://https://github.com/childhood/libSOIL"
 
   def patches
-    DATA
+    :DATA
   end
 
   def install
